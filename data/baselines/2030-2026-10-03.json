@@ -1,0 +1,22 @@
+{
+  "forecast_generated_at": "2026-10-03T17:26:00+07:00",
+  "status": "frozen_conversation_baseline",
+  "model_version": "v1-discussion-baseline",
+  "competition": "FIFA World Cup 2030",
+  "probabilities": {
+    "Spain": 0.18,
+    "France": 0.14,
+    "Argentina": 0.13,
+    "England": 0.12,
+    "Brazil": 0.10,
+    "Portugal": 0.07,
+    "Morocco": 0.05,
+    "Norway": 0.04,
+    "Other": 0.17
+  },
+  "notes": [
+    "Preserved as an audit baseline.",
+    "Not a claim that these probabilities were fitted from a complete timestamped dataset.",
+    "Future versions must not silently overwrite this snapshot."
+  ]
+}
