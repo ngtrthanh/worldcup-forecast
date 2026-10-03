@@ -1,0 +1,44 @@
+version: "2.0.0-baseline"
+objective:
+  primary: log_loss
+  secondary:
+    - brier_score
+    - calibration_error
+
+weights:
+  strength_prior: 0.45
+  recent_form: 0.20
+  defense: 0.15
+  xg_quality: 0.10
+  availability_depth: 0.05
+  context: 0.05
+
+dynamic_update:
+  lambda_by_stage:
+    pre_tournament: 0.00
+    group_1: 0.08
+    group_2: 0.14
+    group_3: 0.20
+    round_of_32: 0.24
+    round_of_16: 0.28
+    quarterfinal: 0.31
+    semifinal: 0.34
+
+probability:
+  logistic_scale: 1.0
+  min_probability: 0.02
+  max_probability: 0.98
+
+champion_challenger:
+  require_log_loss_improvement: true
+  max_allowed_calibration_regression: 0.01
+  minimum_validation_matches: 100
+
+penalties:
+  base_team_a_probability: 0.50
+  shrink_to_half: 0.80
+
+retraining:
+  mode: walk_forward
+  preserve_snapshots: true
+  prohibit_future_leakage: true
