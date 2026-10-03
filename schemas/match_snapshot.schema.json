@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pre-kickoff forecast snapshot",
+  "type": "object",
+  "required": [
+    "match_id",
+    "kickoff_at",
+    "forecast_generated_at",
+    "model_version",
+    "team_a",
+    "team_b",
+    "p_team_a_advance"
+  ],
+  "properties": {
+    "match_id": {"type": "string"},
+    "kickoff_at": {"type": "string", "format": "date-time"},
+    "forecast_generated_at": {"type": "string", "format": "date-time"},
+    "model_version": {"type": "string"},
+    "team_a": {"type": "string"},
+    "team_b": {"type": "string"},
+    "p_team_a_advance": {"type": "number", "minimum": 0, "maximum": 1},
+    "features": {"type": "object"},
+    "source_observed_at_max": {"type": "string", "format": "date-time"},
+    "actual_qualifier": {"type": ["string", "null"]},
+    "brier": {"type": ["number", "null"]},
+    "log_loss": {"type": ["number", "null"]}
+  },
+  "additionalProperties": true
+}
