@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Historical match observation",
+  "type":"object",
+  "required":["match_id","kickoff_at","observed_at","team_a","team_b","goals_a","goals_b"],
+  "properties":{
+    "match_id":{"type":"string"},
+    "kickoff_at":{"type":"string","format":"date-time"},
+    "observed_at":{"type":"string","format":"date-time"},
+    "team_a":{"type":"string"},
+    "team_b":{"type":"string"},
+    "goals_a":{"type":"integer","minimum":0},
+    "goals_b":{"type":"integer","minimum":0},
+    "competition":{"type":"string"},
+    "neutral":{"type":"boolean"}
+  },
+  "additionalProperties":false
+}
